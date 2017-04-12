@@ -1,0 +1,9 @@
+Map from valve name to pin numbers:
+
+IGN_GEN    =  2, ...
+IGN_SAF    =  3
+SV1        =  4
+SV2        =  14
+SV3        =  15
+IGN_MAIN   =  17
+IGN_SEC    =  18?
