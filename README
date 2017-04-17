@@ -8,6 +8,7 @@ VALVE2_NAME pin1 pin2 ...
 All empty lines are ignored
 ERROR when getPins is called on valve name that isn't contained in config.txt
 All non-numeric pin values are ignored
+If multiple valve names are listed, then all corresponding pins are also set to mode
 
 Map from valve name to pin numbers:
 
