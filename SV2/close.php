@@ -2,6 +2,6 @@
     system("gpio -g mode 14 out");
     system("gpio -g write 14 0");
 
-    $res = array('status' => 'OK', 'op' => 'CLOSE SV2');
+    $res = array('status' => 'OK');
     echo json_encode($res);
 ?>

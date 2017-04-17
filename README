@@ -1,3 +1,14 @@
+Enter the map from valve name to pin numbers in file config.txt
+in this format:
+
+VALVE1_NAME pin1 pin2 ...
+VALVE2_NAME pin1 pin2 ...
+...
+
+All empty lines are ignored
+ERROR when getPins is called on valve name that isn't contained in config.txt
+All non-numeric pin values are ignored
+
 Map from valve name to pin numbers:
 
 IGN_GEN    =  2, ...

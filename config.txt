@@ -1,0 +1,2 @@
+IGN_GEN 2
+IGN_MAIN 3
