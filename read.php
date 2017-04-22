@@ -21,8 +21,8 @@ function getPins($valve, $mode) {
 	$resp['status'] = 'OK';
 	for ($i = 1; $i < count($toks); $i++){
 	     if(is_numeric($toks[$i])){
-		system("gpio -g mode ".$toks[$i]." out");
-		system("gpio -g write ".$toks[$i]." ".$mode);	
+		 system("gpio -g mode ".$toks[$i]." out");
+		 system("gpio -g write ".$toks[$i]." ".$mode);	
 	     }	
 	}
       } 

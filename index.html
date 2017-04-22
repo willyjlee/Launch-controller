@@ -30,13 +30,13 @@
   <br>
   <br>
 	<div>
-		<button class="btn" type="button" onclick="func('IGN_GEN/open.php')">IGN_GEN</button>
-		<button class="btn" type="button" onclick="func('IGN_SAF/open.php')">IGN_SAF</button>
-		<button class="btn" type="button" onclick="func('SV1/open.php')">SV1</button>
-		<button class="btn" type="button" onclick="func('SV2/open.php')">SV2</button>
-		<button class="btn" type="button" onclick="func('SV3/open.php')">SV3</button>
-		<button class="btn" type="button" onclick="func('IGN_MAIN/open.php')">IGN_MAIN</button>
-		<button class="btn" type="button" onclick="func('IGN_SEC/open.php')">IGN_SEC</button>
+		<button id="IGN_GEN" class="btn" type="button" onclick="func('IGN_GEN/open.php')">IGN_GEN</button>
+		<button id="IGN_SAF" class="btn" type="button" onclick="func('IGN_SAF/open.php')">IGN_SAF</button>
+		<button id="SV1"class="btn" type="button" onclick="func('SV1/open.php')">SV1</button>
+		<button id="SV2" class="btn" type="button" onclick="func('SV2/open.php')">SV2</button>
+		<button id="SV3" class="btn" type="button" onclick="func('SV3/open.php')">SV3</button>
+		<button id="IGN_MAIN" class="btn" type="button" onclick="func('IGN_MAIN/open.php')">IGN_MAIN</button>
+		<button id="IGN_SEC" class="btn" type="button" onclick="func('IGN_SEC/open.php')">IGN_SEC</button>
 	</div>
 
   <br>
@@ -46,46 +46,44 @@
   <br>
 
 	<div>
-		<button class="btn" type="button" onclick="func('IGN_GEN/close.php')">CLOSE_IGN_GEN</button>
-		<button class="btn" type="button" onclick="func('IGN_SAF/close.php')">CLOSE_IGN_SAF</button>
-		<button class="btn" type="button" onclick="func('SV1/close.php')">CLOSE_SV1</button>
-		<button class="btn" type="button" onclick="func('SV2/close.php')">CLOSE_SV2</button>
-		<button class="btn" type="button" onclick="func('SV3/close.php')">CLOSE_SV3</button>
-		<button class="btn" type="button" onclick="func('IGN_MAIN/close.php')">CLOSE_IGN_MAIN</button>
-		<button class="btn" type="button" onclick="func('IGN_SEC/close.php')">CLOSE_IGN_SEC</button>
+		<button id="CLOSE_IGN_GEN" class="btn" type="button" onclick="func('IGN_GEN/close.php')">CLOSE_IGN_GEN</button>
+		<button id="CLOSE_IGN_SAF" class="btn" type="button" onclick="func('IGN_SAF/close.php')">CLOSE_IGN_SAF</button>
+		<button id="CLOSE_SV1" class="btn" type="button" onclick="func('SV1/close.php')">CLOSE_SV1</button>
+		<button id="CLOSE_SV2" class="btn" type="button" onclick="func('SV2/close.php')">CLOSE_SV2</button>
+		<button id="CLOSE_SV3" class="btn" type="button" onclick="func('SV3/close.php')">CLOSE_SV3</button>
+		<button id="CLOSE_IGN_MAIN" class="btn" type="button" onclick="func('IGN_MAIN/close.php')">CLOSE_IGN_MAIN</button>
+		<button id="CLOSE_IGN_SEC" class="btn" type="button" onclick="func('IGN_SEC/close.php')">CLOSE_IGN_SEC</button>
 	</div>
 
 	<script type="text/javascript">
-
-			function func(str){
+	function func(str){
         var user = document.getElementById("user").value;
         var pass = document.getElementById("pass").value;
         console.log(user);
         console.log(pass);
-        //document.getElementById("user").value="";
-        //document.getElementById("pass").value="";
 				$.ajax({
 					url: str,
 					type: 'POST',
 					success: function(data, status){
 						console.log(data);
-            document.getElementById("status").innerHTML = "status: "+JSON.parse(data)['status'];
-            document.getElementById("op").innerHTML = "operation: "+JSON.parse(data)['op'];
+            			document.getElementById("status").innerHTML = "status: "+JSON.parse(data)['status'];
+            			document.getElementById("op").innerHTML = "operation: "+JSON.parse(data)['op'];
             
-            var d = new Date();
-            document.getElementById("time").innerHTML = "time: "+d;
+            			var d = new Date();
+            			document.getElementById("time").innerHTML = "time: "+d;
 					},
-          beforeSend: function(req){
-            req.setRequestHeader("Authorization", "Basic "+btoa(user+":"+pass));
-          },
-          error: function(status){
-            document.getElementById("status").innerHTML = "status: ERROR "+status;
-            console.log(status);
-          }
+          			beforeSend: function(req){
+            			req.setRequestHeader("Authorization", "Basic "+btoa(user+":"+pass));
+          			},
+          			error: function(status){
+            			document.getElementById("status").innerHTML = "status: ERROR "+status;
+            			console.log(status);
+          			}
 				});
-			}
-
+	}
 	</script>
+
+	<script src="js/scripts.js" type="text/javascript"></script>
 
 	</body>
 </html>
