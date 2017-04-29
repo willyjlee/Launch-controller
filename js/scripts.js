@@ -19,7 +19,7 @@
 	// if any pin fails, sets to red
 	function setPinStatus(valve, pins){
 		var status = getValveStatus(pins);
-		document.getElementById(valve).style.backgroundColor = (status == 1 ? "#53C746" : (status == 0 ? "#E87676" : "#EFDD4A"));
+		document.getElementById(valve).style.backgroundColor = (status == 0 ? "#53C746" : (status == 1 ? "#E87676" : "#EFDD4A"));
 	}
 
 	function getStatus(){
