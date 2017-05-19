@@ -12,7 +12,7 @@ If multiple valve names are listed, then all corresponding pins are also set to 
 
 Instructions:
 1. Edit config.txt with the correct format for launch pins
-2. config.txt is also used to run Python script in crontab
+2. Edit /home/pi/pin_manage/config.txt to be pins that crontab will set to output
 3. In "log" directory, add a new log file named "log.txt"
-    (if this file exists, new output is appended)
+    (if this file exists, new output is replaced)
     (if no such file exists, file is attempted to be created)

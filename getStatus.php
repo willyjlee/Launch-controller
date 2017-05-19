@@ -1,5 +1,7 @@
 <?php
 
+// No auth here
+
 // read status of pins for each valve in config.txt
 // returns status for all pins for each valve
 // on js, can choose display format

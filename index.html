@@ -76,9 +76,12 @@
             			var d = new Date();
             			document.getElementById("time").innerHTML = "time: "+d;
 					},
-          			beforeSend: function(req){
-            			req.setRequestHeader("Authorization", "Basic "+btoa(user+":"+pass));
-          			},
+          			
+				data: {"username" : user, "password" : pass},
+
+                // data: {myData:dataString};
+                // TODO: send the username and password here
+                // TODO: need send user/pass thru HTTPS
           			error: function(status){
             			document.getElementById("status").innerHTML = "status: ERROR "+status;
             			console.log(status);
