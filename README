@@ -1,3 +1,5 @@
+Launch-controller:
+
 Enter the map from valve name to pin numbers in file config.txt
 in this format:
 
@@ -16,3 +18,8 @@ Instructions:
 3. In "log" directory, add a new log file named "log.txt"
     (if this file exists, new output is replaced)
     (if no such file exists, file is attempted to be created)
+4. Authentication server requirements:
+	a. server = "localhost"
+	   user   = "root"
+	   db     = "login_db"
+5. getStatus.php runs (every 100ms) & displays live pin status on website
