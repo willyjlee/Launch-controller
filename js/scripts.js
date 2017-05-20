@@ -1,6 +1,7 @@
 	
 
 	$(document).ready(function() {
+		getStatus();
 		setInterval(getStatus, 100);
 	});
 
@@ -20,6 +21,7 @@
 	function setPinStatus(valve, pins){
 		var status = getValveStatus(pins);
 		document.getElementById(valve).style.backgroundColor = (status == 0 ? "#53C746" : (status == 1 ? "#E87676" : "#EFDD4A"));
+		document.getElementById(valve).value = (status == 0 ? "on" : "off");
 	}
 
 	function getStatus(){

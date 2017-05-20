@@ -30,13 +30,13 @@
   <br>
   <br>
 	<div>
-		<button id="GEN_SAF" class="btn" type="button" onclick="func('GEN_SAF/open.php')">GEN_SAF</button>
-		<button id="IGN_SAF" class="btn" type="button" onclick="func('IGN_SAF/open.php')">IGN_SAF</button>
-		<button id="SV1"class="btn" type="button" onclick="func('SV1/open.php')">SV1</button>
-		<button id="SV2" class="btn" type="button" onclick="func('SV2/open.php')">SV2</button>
-		<button id="SV3" class="btn" type="button" onclick="func('SV3/open.php')">SV3</button>
-		<button id="SV4" class="btn" type="button" onclick="func('SV4/open.php')">SV4</button>
-		<button id="IGN" class="btn" type="button" onclick="func('IGN/open.php')">IGN</button>
+		<button id="GEN_SAF" value="off" class="btn" type="button" onclick="toggle('GEN_SAF')">GEN_SAF</button>
+		<button id="IGN_SAF" value="off" class="btn" type="button" onclick="toggle('IGN_SAF')">IGN_SAF</button>
+		<button id="SV1" value="off" class="btn" type="button" onclick="toggle('SV1')">SV1</button>
+		<button id="SV2" value="off" class="btn" type="button" onclick="toggle('SV2')">SV2</button>
+		<button id="SV3" value="off" class="btn" type="button" onclick="toggle('SV3')">SV3</button>
+		<button id="SV4" value="off" class="btn" type="button" onclick="toggle('SV4')">SV4</button>
+		<button id="IGN" value="off" class="btn" type="button" onclick="toggle('IGN')">IGN</button>
 	</div>
 
   <br>
@@ -45,7 +45,7 @@
   <br>
   <br>
 
-	<div>
+	<!-- <div>
 		<button id="CLOSE_GEN_SAF" class="btn" type="button" onclick="func('GEN_SAF/close.php')">CLOSE_GEN_SAF</button>
 		<button id="CLOSE_IGN_SAF" class="btn" type="button" onclick="func('IGN_SAF/close.php')">CLOSE_IGN_SAF</button>
 		<button id="CLOSE_SV1" class="btn" type="button" onclick="func('SV1/close.php')">CLOSE_SV1</button>
@@ -53,10 +53,24 @@
 		<button id="CLOSE_SV3" class="btn" type="button" onclick="func('SV3/close.php')">CLOSE_SV3</button>
 		<button id="CLOSE_SV4" class="btn" type="button" onclick="func('SV4/close.php')">CLOSE_SV4</button>
 		<button id="CLOSE_IGN" class="btn" type="button" onclick="func('IGN/close.php')">CLOSE_IGN</button>
-	</div>
+	</div> -->
 
 	<script type="text/javascript">
-	function func(str){
+
+  // str=name of valve = 'GEN_SAF', 'IGN_SAF'
+  function toggle(str){
+    var btn = document.getElementById(str);
+    if(btn.value=="off"){
+      //document.getElementById(str).value="on";
+      func(btn, str+"/open.php");
+    }else{
+      //document.getElementById(str).value="off";
+      func(btn, str+"/close.php");
+      
+    }
+  }
+
+	function func(btn, str){
         var user = document.getElementById("user").value;
         var pass = document.getElementById("pass").value;
         console.log(user);
@@ -70,13 +84,18 @@
 					type: 'POST',
 					success: function(data, status){
 						console.log(data);
-            			document.getElementById("status").innerHTML = "status: "+JSON.parse(data)['status'];
+				var status = JSON.parse(data)['status'];
+            			document.getElementById("status").innerHTML = "status: "+status;
+				if(status=="OK"){
+				   btn.value = btn.value=="on" ? "off" : "on";
+				}
+
             			document.getElementById("op").innerHTML = "operation: "+JSON.parse(data)['op'];
 
             			var d = new Date();
             			document.getElementById("time").innerHTML = "time: "+d;
 					},
-          			
+
 				data: {"username" : user, "password" : pass},
 
                 // data: {myData:dataString};
