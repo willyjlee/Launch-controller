@@ -1,18 +1,21 @@
 <?php
 
-	include( __DIR__ . "/../auth.php");
+// $valve = valve name abbreviated (F_CC)
+// $valve_str = full valve string
+function open($valve, $valve_str){
+	include( __DIR__ . "/auth.php");
 
 	$authret = json_decode(auth($_POST['username'], $_POST['password']),true);
 
-	$opname = 'CLOSE SV2';
+	$opname = 'OPEN ['.$valve_str.']';
 
 	if($authret['status']=="1"){
 		/////////////////////////////////////////////////
 
-    		include( __DIR__ . "/../read.php");
-    		include( __DIR__ . "/../log.php");
+    include( __DIR__ . "/read.php");
+  	include( __DIR__ . "/log.php");
 
-    		$ret = json_decode(getPins("SV2", 1), true);
+  	$ret = json_decode(getPins($valve, 0), true);
 		$stat = $ret['status'];
 		logOp($opname,$stat,time());
 	}
@@ -22,6 +25,6 @@
 	}
 	$res = array('status' => $stat, 'op' => $opname);
 
-	echo json_encode($res)."\n";
-
+	return json_encode($res);
+}
 ?>

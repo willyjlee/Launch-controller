@@ -1,0 +1,13 @@
+GEN_SAF_1 GeneralSafety1
+GEN_SAF_2 GeneralSafety2
+PR_TNK PressurantToTanks
+PR_V PressurantVent
+NTR_V NitrousVent
+IGN_SAF IgnitionSafety
+IGN_PRIM IgnitionPrimary
+NTR_DMP NitrousDump
+NTR_CC NitroustoCC
+F_CC FueltoCC
+F_DMP FuelDump
+PR_K_BOTTLE PressurantKBottle
+NTR_BOTTLE NitrousBottle

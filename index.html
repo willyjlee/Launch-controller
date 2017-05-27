@@ -30,14 +30,46 @@
   <br>
   <br>
 	<div>
-		<button id="GEN_SAF" value="off" class="btn" type="button" onclick="toggle('GEN_SAF')">GEN_SAF</button>
-		<button id="IGN_SAF" value="off" class="btn" type="button" onclick="toggle('IGN_SAF')">IGN_SAF</button>
-		<button id="SV1" value="off" class="btn" type="button" onclick="toggle('SV1')">SV1</button>
-		<button id="SV2" value="off" class="btn" type="button" onclick="toggle('SV2')">SV2</button>
-		<button id="SV3" value="off" class="btn" type="button" onclick="toggle('SV3')">SV3</button>
-		<button id="SV4" value="off" class="btn" type="button" onclick="toggle('SV4')">SV4</button>
-		<button id="IGN" value="off" class="btn" type="button" onclick="toggle('IGN')">IGN</button>
-	</div>
+		<div style="display:block; margin:0;width:2000px;">
+			<button id="GEN_SAF_1" value="off" class="btn" type="button" onclick="toggle('GEN_SAF_1')">General Safety 1</button>
+                	<button id="GEN_SAF_2" value="off" class="btn" type="button" onclick="toggle('GEN_SAF_2')">General Safety 2</button>
+		</div>
+		
+		<div style="display:block; margin:0;width:2000px;">
+			<button id="IGN_SAF" value="off" class="btn" type="button" onclick="toggle('IGN_SAF')">Ignition Safety</button>
+			<button id="IGN_PRIM" value="off" class="btn" type="button" onclick="toggle('IGN_PRIM')">Ignition Primary</button>
+		</div>
+
+		<div style="display:block; margin:0;width:2000px;">
+			<button id="PR_K_BOTTLE" value="off" class="btn" type="button" onclick="toggle('PR_K_BOTTLE')">Pressurant K Bottle</button>
+			<button id="PR_V" value="off" class="btn" type="button" onclick="toggle('PR_V')">Pressurant Vent</button>
+			<button id="PR_TNK" value="off" class="btn" type="button" onclick="toggle('PR_TNK')">Pressurant to Tanks</button>
+		</div>
+
+		<div style="display:block; margin:0;width:2000px;">
+			<button id="NTR_BOTTLE" value="off" class="btn" type="button" onclick="toggle('NTR_BOTTLE')">Nitrous Bottle</button>
+			<button id="NTR_V" value="off" class="btn" type="button" onclick="toggle('NTR_V')">Nitrous Vent</button>
+			<button id="NTR_CC" value="off" class="btn" type="button" onclick="toggle('NTR_CC')">Nitrous to CC</button>
+			<button id="NTR_DMP" value="off" class="btn" type="button" onclick="toggle('NTR_DMP')">Nitrous Dump</button>
+		</div>
+		
+		<div style="display:block; margin:0;width:2000px;">
+			<button id="F_CC" value="off" class="btn" type="button" onclick="toggle('F_CC')">Fuel to CC</button>
+			<button id="F_DMP" value="off" class="btn" type="button" onclick="toggle('F_DMP')">Fuel Dump</button>
+		</div>
+		<!--
+		<button id="PR_TNK" value="off" class="btn" type="button" onclick="toggle('PR_TNK')">Pressurant to Tanks</button>
+		<button id="PR_V" value="off" class="btn" type="button" onclick="toggle('PR_V')">Pressurant Vent</button>
+		<button id="NTR_V" value="off" class="btn" type="button" onclick="toggle('NTR_V')">Nitrous Vent</button>
+		<button id="IGN_SAF" value="off" class="btn" type="button" onclick="toggle('IGN_SAF')">Ignition Safety</button>
+		<button id="IGN_PRIM" value="off" class="btn" type="button" onclick="toggle('IGN_PRIM')">Ignition Primary</button>
+    		<button id="NTR_DMP" value="off" class="btn" type="button" onclick="toggle('NTR_DMP')">Nitrous Dump</button>
+    		<button id="NTR_CC" value="off" class="btn" type="button" onclick="toggle('NTR_CC')">Nitrous to CC</button>
+    		<button id="F_CC" value="off" class="btn" type="button" onclick="toggle('F_CC')">Fuel to CC</button>
+    		<button id="F_DMP" value="off" class="btn" type="button" onclick="toggle('F_DMP')">Fuel Dump</button>
+    		<button id="PR_K_BOTTLE" value="off" class="btn" type="button" onclick="toggle('PR_K_BOTTLE')">Pressurant K Bottle</button>
+    		<button id="NTR_BOTTLE" value="off" class="btn" type="button" onclick="toggle('NTR_BOTTLE')">Nitrous Bottles</button>-->
+  	</div>
 
   <br>
   <br>
@@ -62,11 +94,11 @@
     var btn = document.getElementById(str);
     if(btn.value=="off"){
       //document.getElementById(str).value="on";
-      func(btn, str+"/open.php");
+      func(btn, "valves/"+str+"/open.php");
     }else{
       //document.getElementById(str).value="off";
-      func(btn, str+"/close.php");
-      
+      func(btn, "valves/"+str+"/close.php");
+
     }
   }
 
