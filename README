@@ -1,5 +1,9 @@
 Launch-controller:
 
+* The web and backend interface for wireless ignition of UCLA Rocket Project's 2017 IREC Competition Rocket.
+* This system wirelessly toggles pins, reads pin status, and logs operations through an Apache server running on Raspberry Pi
+* Authentication system user/password login to operate valves
+
 Enter the map from valve name to pin numbers in file config.txt
 in this format:
 
@@ -23,3 +27,6 @@ Instructions:
 	   user   = "root"
 	   db     = "login_db"
 5. getStatus.php runs (every 100ms) & displays live pin status on website
+6. In case valves need to be changed, specify new configuration in config/init and run:
+        python build.py
+   This builds new directory structure to match the config file
