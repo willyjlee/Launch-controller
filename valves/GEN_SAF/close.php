@@ -1,4 +1,4 @@
 <?php
 include( __DIR__ . "/../../close.php");
-echo close("GEN_SAF_2", "GeneralSafety2");
+echo close("GEN_SAF", "GeneralSafety");
 ?>

@@ -20,55 +20,48 @@
 
   <br>
 
-  <div>
+  <div class="login">
     enter user: <input type="text" id="user">
   </div>
-  <div>
+  <div class="login">
     enter pass: <input type="password" id="pass">
   </div>
 
   <br>
   <br>
 	<div>
-		<div style="display:block; margin:0;width:2000px;">
-			<button id="GEN_SAF_1" value="off" class="btn" type="button" onclick="toggle('GEN_SAF_1')">General Safety 1</button>
-                	<button id="GEN_SAF_2" value="off" class="btn" type="button" onclick="toggle('GEN_SAF_2')">General Safety 2</button>
-		</div>
-		
-		<div style="display:block; margin:0;width:2000px;">
-			<button id="IGN_SAF" value="off" class="btn" type="button" onclick="toggle('IGN_SAF')">Ignition Safety</button>
-			<button id="IGN_PRIM" value="off" class="btn" type="button" onclick="toggle('IGN_PRIM')">Ignition Primary</button>
+		<div class="flex-container">
+			<button id="GEN_SAF" value="off" class="flex-item" type="button" onclick="toggle('GEN_SAF')">General Safety</button>
 		</div>
 
-		<div style="display:block; margin:0;width:2000px;">
-			<button id="PR_K_BOTTLE" value="off" class="btn" type="button" onclick="toggle('PR_K_BOTTLE')">Pressurant K Bottle</button>
-			<button id="PR_V" value="off" class="btn" type="button" onclick="toggle('PR_V')">Pressurant Vent</button>
-			<button id="PR_TNK" value="off" class="btn" type="button" onclick="toggle('PR_TNK')">Pressurant to Tanks</button>
+		<div class="flex-container">
+			<button id="IGN_SAF" value="off" class="flex-item" type="button" onclick="toggle('IGN_SAF')">Ignition Safety</button>
+			<button id="IGN_PRIM" value="off" class="flex-item" type="button" onclick="toggle('IGN_PRIM')">Ignition Primary</button>
 		</div>
 
-		<div style="display:block; margin:0;width:2000px;">
-			<button id="NTR_BOTTLE" value="off" class="btn" type="button" onclick="toggle('NTR_BOTTLE')">Nitrous Bottle</button>
-			<button id="NTR_V" value="off" class="btn" type="button" onclick="toggle('NTR_V')">Nitrous Vent</button>
-			<button id="NTR_CC" value="off" class="btn" type="button" onclick="toggle('NTR_CC')">Nitrous to CC</button>
-			<button id="NTR_DMP" value="off" class="btn" type="button" onclick="toggle('NTR_DMP')">Nitrous Dump</button>
+		<div class="flex-container">
+			<button id="PR_K_BOTTLE" value="off" class="flex-item" type="button" onclick="toggle('PR_K_BOTTLE')">Pressurant K Bottle</button>
+			<button id="PR_V" value="off" class="flex-item" type="button" onclick="toggle('PR_V')">Pressurant Vent</button>
 		</div>
-		
-		<div style="display:block; margin:0;width:2000px;">
-			<button id="F_CC" value="off" class="btn" type="button" onclick="toggle('F_CC')">Fuel to CC</button>
-			<button id="F_DMP" value="off" class="btn" type="button" onclick="toggle('F_DMP')">Fuel Dump</button>
+
+		<div class="flex-container">
+			<button id="PR_TNK" value="off" class="flex-item" type="button" onclick="toggle('PR_TNK')">Pressurant to Tanks</button>
 		</div>
-		<!--
-		<button id="PR_TNK" value="off" class="btn" type="button" onclick="toggle('PR_TNK')">Pressurant to Tanks</button>
-		<button id="PR_V" value="off" class="btn" type="button" onclick="toggle('PR_V')">Pressurant Vent</button>
-		<button id="NTR_V" value="off" class="btn" type="button" onclick="toggle('NTR_V')">Nitrous Vent</button>
-		<button id="IGN_SAF" value="off" class="btn" type="button" onclick="toggle('IGN_SAF')">Ignition Safety</button>
-		<button id="IGN_PRIM" value="off" class="btn" type="button" onclick="toggle('IGN_PRIM')">Ignition Primary</button>
-    		<button id="NTR_DMP" value="off" class="btn" type="button" onclick="toggle('NTR_DMP')">Nitrous Dump</button>
-    		<button id="NTR_CC" value="off" class="btn" type="button" onclick="toggle('NTR_CC')">Nitrous to CC</button>
-    		<button id="F_CC" value="off" class="btn" type="button" onclick="toggle('F_CC')">Fuel to CC</button>
-    		<button id="F_DMP" value="off" class="btn" type="button" onclick="toggle('F_DMP')">Fuel Dump</button>
-    		<button id="PR_K_BOTTLE" value="off" class="btn" type="button" onclick="toggle('PR_K_BOTTLE')">Pressurant K Bottle</button>
-    		<button id="NTR_BOTTLE" value="off" class="btn" type="button" onclick="toggle('NTR_BOTTLE')">Nitrous Bottles</button>-->
+
+		<div class="flex-container">
+			<button id="NTR_BOTTLE" value="off" class="flex-item" type="button" onclick="toggle('NTR_BOTTLE')">Nitrous Bottle</button>
+			<button id="NTR_V" value="off" class="flex-item" type="button" onclick="toggle('NTR_V')">Nitrous Vent</button>
+		</div>
+
+		<div class="flex-container">
+			<button id="NTR_CC" value="off" class="flex-item" type="button" onclick="toggle('NTR_CC')">Nitrous to CC</button>
+			<button id="NTR_DMP" value="off" class="flex-item" type="button" onclick="toggle('NTR_DMP')">Nitrous Dump</button>
+		</div>
+
+		<div class="flex-container">
+			<button id="F_CC" value="off" class="flex-item" type="button" onclick="toggle('F_CC')">Fuel to CC</button>
+			<button id="F_DMP" value="off" class="flex-item" type="button" onclick="toggle('F_DMP')">Fuel Dump</button>
+		</div>
   	</div>
 
   <br>
@@ -77,68 +70,9 @@
   <br>
   <br>
 
-	<!-- <div>
-		<button id="CLOSE_GEN_SAF" class="btn" type="button" onclick="func('GEN_SAF/close.php')">CLOSE_GEN_SAF</button>
-		<button id="CLOSE_IGN_SAF" class="btn" type="button" onclick="func('IGN_SAF/close.php')">CLOSE_IGN_SAF</button>
-		<button id="CLOSE_SV1" class="btn" type="button" onclick="func('SV1/close.php')">CLOSE_SV1</button>
-		<button id="CLOSE_SV2" class="btn" type="button" onclick="func('SV2/close.php')">CLOSE_SV2</button>
-		<button id="CLOSE_SV3" class="btn" type="button" onclick="func('SV3/close.php')">CLOSE_SV3</button>
-		<button id="CLOSE_SV4" class="btn" type="button" onclick="func('SV4/close.php')">CLOSE_SV4</button>
-		<button id="CLOSE_IGN" class="btn" type="button" onclick="func('IGN/close.php')">CLOSE_IGN</button>
-	</div> -->
+	<script src="js/toggle.js" type="text/javascript">
+    //scripts
 
-	<script type="text/javascript">
-
-  // str=name of valve = 'GEN_SAF', 'IGN_SAF'
-  function toggle(str){
-    var btn = document.getElementById(str);
-    if(btn.value=="off"){
-      //document.getElementById(str).value="on";
-      func(btn, "valves/"+str+"/open.php");
-    }else{
-      //document.getElementById(str).value="off";
-      func(btn, "valves/"+str+"/close.php");
-
-    }
-  }
-
-	function func(btn, str){
-        var user = document.getElementById("user").value;
-        var pass = document.getElementById("pass").value;
-        console.log(user);
-        console.log(pass);
-
-        //document.getElementById("user").value="";
-        //document.getElementById("pass").value="";
-
-				$.ajax({
-					url: str,
-					type: 'POST',
-					success: function(data, status){
-						console.log(data);
-				var status = JSON.parse(data)['status'];
-            			document.getElementById("status").innerHTML = "status: "+status;
-				if(status=="OK"){
-				   btn.value = btn.value=="on" ? "off" : "on";
-				}
-
-            			document.getElementById("op").innerHTML = "operation: "+JSON.parse(data)['op'];
-
-            			var d = new Date();
-            			document.getElementById("time").innerHTML = "time: "+d;
-					},
-
-				data: {"username" : user, "password" : pass},
-
-                // data: {myData:dataString};
-                // TODO: send the username and password here
-                // TODO: need send user/pass thru HTTPS
-          			error: function(status){
-            			document.getElementById("status").innerHTML = "status: ERROR "+status;
-            			console.log(status);
-          			}
-				});
-	}
 	</script>
 
 	<script src="js/scripts.js" type="text/javascript"></script>

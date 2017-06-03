@@ -1,5 +1,4 @@
-GEN_SAF_1 GeneralSafety1
-GEN_SAF_2 GeneralSafety2
+GEN_SAF GeneralSafety
 PR_TNK PressurantToTanks
 PR_V PressurantVent
 NTR_V NitrousVent
