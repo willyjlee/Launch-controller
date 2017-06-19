@@ -5,7 +5,7 @@
 function open($valve, $valve_str){
 	include( __DIR__ . "/auth.php");
 
-	$authret = json_decode(auth($_POST['username'], $_POST['password']),true);
+	$authret = json_decode(auth($_REQUEST['username'], $_REQUEST['password']),true);
 
 	$opname = 'OPEN ['.$valve_str.']';
 
