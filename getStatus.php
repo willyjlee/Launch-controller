@@ -13,6 +13,8 @@ if(!$file){
 }
 
 //$resp['status'] = array();
+
+// read whole config file
 while(!feof($file)){
 	$str = fgets($file);
 	$toks = preg_split("/[\s]+/", $str, -1, PREG_SPLIT_NO_EMPTY);
@@ -25,6 +27,7 @@ while(!feof($file)){
 	//$pins = array();
 	for($i = 1; $i < count($toks); $i++){
     		if(is_numeric($toks[$i])){
+    		// run on pi
 			$pstatus = exec("gpio -g read ".$toks[$i]);
 			if(!isset($statusval[$toks[0]])){
 				$statusval[$toks[0]] = array();

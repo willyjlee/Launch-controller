@@ -5,6 +5,7 @@
 function open($valve, $valve_str){
 	include( __DIR__ . "/auth.php");
 
+	// get request data
 	$authret = json_decode(auth($_REQUEST['username'], $_REQUEST['password']),true);
 
 	$opname = 'OPEN ['.$valve_str.']';
@@ -17,6 +18,7 @@ function open($valve, $valve_str){
 
   	$ret = json_decode(getPins($valve, 0), true);
 		$stat = $ret['status'];
+		// log the operation
 		logOp($opname,$stat,time());
 	}
 	else{

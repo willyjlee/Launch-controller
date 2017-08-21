@@ -11,6 +11,7 @@ function getPins($valve, $mode) {
   }	
   $resp['status'] = 'Valve name '.$valve.' not found';	
 
+  // read entire config file
   while(!feof($file)){
      $str = fgets($file);
      $toks = preg_split("/[\s]+/", $str, -1, PREG_SPLIT_NO_EMPTY);
@@ -21,6 +22,7 @@ function getPins($valve, $mode) {
 	$resp['status'] = 'OK';
 	for ($i = 1; $i < count($toks); $i++){
 	     if(is_numeric($toks[$i])){
+        // run commands on pi
 		 system("gpio -g mode ".$toks[$i]." out");
 		 system("gpio -g write ".$toks[$i]." ".$mode);	
 	     }	

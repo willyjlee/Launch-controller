@@ -20,11 +20,15 @@
 	// if any pin fails, sets to red
 	function setPinStatus(valve, pins){
 		var status = getValveStatus(pins);
+
+		// set color of valve buttons
 		document.getElementById(valve).style.backgroundColor = (status == 0 ? "#53C746" : (status == 1 ? "#E87676" : "#EFDD4A"));
 		document.getElementById(valve).value = (status == 0 ? "on" : "off");
 	}
 
 	function getStatus(){
+
+		// AJAX request to PHP getStatus
 		$.ajax({
 			url: 'getStatus.php',
 			type: 'GET',

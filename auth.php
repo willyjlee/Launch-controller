@@ -6,6 +6,8 @@ function auth($username, $password) {
   $user = "root";
   $pass = "pinetree";
   $db = "login_db";
+
+  // connect to auth database
   $conn = mysqli_connect($srv,$user,$pass,$db);
 
   if(!$conn){
@@ -23,6 +25,7 @@ function auth($username, $password) {
    return json_encode($ret);// no user found in table
   }
 
+  // verify hashed password
   if($username==$row['username'] && password_verify($password,$row['password_hash'])){
     $ret['status'] = "1";// ok
   }else{
